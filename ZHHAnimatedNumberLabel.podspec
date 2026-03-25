@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZHHAnimatedNumberLabel'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '一个优雅流畅地展示数字变化动画的 UILabel 子类。'
 
   s.description      = <<-DESC
@@ -19,14 +19,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/yue5yueliang/ZHHAnimatedNumberLabel.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
-
-  # 默认子模块：核心功能
-  s.default_subspec = 'Core'
-
-  s.subspec 'Core' do |core|
-    core.source_files = 'ZHHAnimatedNumberLabel/Classes/**/*'
-    core.frameworks   = 'UIKit', 'Foundation'
-  end
+  s.swift_version    = '5.0'
+  s.source_files     = 'ZHHAnimatedNumberLabel/Classes/**/*'
 
   # 若将来有资源文件，可启用以下配置
   # s.resource_bundles = {

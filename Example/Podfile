@@ -1,10 +1,11 @@
 use_frameworks!
 
-platform :ios, '13.0'
+platform :ios, '15.0'
 
 target 'ZHHAnimatedNumberLabel_Example' do
   pod 'ZHHAnimatedNumberLabel', :path => '../'
-  pod 'ZHHAnneKit'
+  # 调试工具（仅 Debug 下生效）
+  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']  # 自定义的服务器配置（仅在 Debug 模式下使用）
 
   target 'ZHHAnimatedNumberLabel_Tests' do
     inherit! :search_paths

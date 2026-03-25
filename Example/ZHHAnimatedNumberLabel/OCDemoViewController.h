@@ -1,13 +1,13 @@
 //
-//  ZHHViewController.h
+//  OCDemoViewController.h
 //  ZHHAnimatedNumberLabel
 //
 //  Created by 桃色三岁 on 04/26/2025.
 //  Copyright (c) 2025 桃色三岁. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
-@interface ZHHViewController : UIViewController
+@interface OCDemoViewController : UIViewController
 
 @end
