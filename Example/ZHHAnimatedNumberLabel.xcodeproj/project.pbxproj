@@ -41,7 +41,7 @@
 		607FACE51AFB9204008FA782 /* ZHHAnimatedNumberLabel_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHHAnimatedNumberLabel_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6E2AF4CE25E5F0F5C733D32C /* ZHHAnimatedNumberLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHHAnimatedNumberLabel.podspec; path = ../ZHHAnimatedNumberLabel.podspec; sourceTree = "<group>"; };
+		6E2AF4CE25E5F0F5C733D32C /* ZHHAnimatedNumberLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHHAnimatedNumberLabel.podspec; path = ../ZHHAnimatedNumberLabel.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		78B0DA05A2C68FA20BA9AD39 /* Pods-ZHHAnimatedNumberLabel_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHHAnimatedNumberLabel_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZHHAnimatedNumberLabel_Tests/Pods-ZHHAnimatedNumberLabel_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F1A00011AFB9204008FA701 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7F1A00021AFB9204008FA702 /* SwiftDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 6K33U8U7QL;
+						DevelopmentTeam = 7GP7QM2K7V;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -490,7 +490,7 @@
 			baseConfigurationReference = 5088FE3888D2D7C7E32ED01C /* Pods-ZHHAnimatedNumberLabel_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6K33U8U7QL;
+				DEVELOPMENT_TEAM = 7GP7QM2K7V;
 				INFOPLIST_FILE = ZHHAnimatedNumberLabel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,7 +508,7 @@
 			baseConfigurationReference = DB5172C7B07882B0EEF83494 /* Pods-ZHHAnimatedNumberLabel_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6K33U8U7QL;
+				DEVELOPMENT_TEAM = 7GP7QM2K7V;
 				INFOPLIST_FILE = ZHHAnimatedNumberLabel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -14,6 +14,7 @@ final class SwiftDemoViewController: UIViewController {
     private var coinTotal: Int = 200
     private var coinTotalDigitSmooth: Int = 200
     private var coinTotalDigitDrop: Int = 200
+    private var coinTotalDigitCentered: Int = 0
     private var coinTimer: Timer?
     private let scrollView = UIScrollView()
 
@@ -51,6 +52,20 @@ final class SwiftDemoViewController: UIViewController {
         value.textColor = .systemPurple
         value.font = .systemFont(ofSize: 18, weight: .bold)
         value.zhh_format = "金币坠落：%d"
+        value.zhh_animationEngine = .digitScroll
+        value.zhh_digitScrollStyle = .drop
+        value.zhh_animationStyle = .easeOut
+        return value
+    }()
+    
+    /// 纯数字居中示例（无前后缀）
+    private lazy var coinLabelDigitCentered: ZHHAnimatedNumberLabel = {
+        let value = ZHHAnimatedNumberLabel(frame: CGRect(x: 24, y: 460, width: 220, height: 36))
+        value.textColor = .systemPurple
+        value.font = .systemFont(ofSize: 18, weight: .bold)
+        value.textAlignment = .center
+        value.backgroundColor = UIColor.systemPurple.withAlphaComponent(0.1)
+        value.zhh_format = "%d"
         value.zhh_animationEngine = .digitScroll
         value.zhh_digitScrollStyle = .drop
         value.zhh_animationStyle = .easeOut
@@ -169,9 +184,11 @@ final class SwiftDemoViewController: UIViewController {
         coinLabel.frame = CGRect(x: leftX, y: coinStartY, width: columnWidth, height: rowHeight)
         coinLabelDigitSmooth.frame = CGRect(x: leftX, y: coinStartY + rowHeight + rowSpacing, width: columnWidth, height: rowHeight)
         coinLabelDigitDrop.frame = CGRect(x: leftX, y: coinStartY + (rowHeight + rowSpacing) * 2, width: columnWidth, height: rowHeight)
+        coinLabelDigitCentered.frame = CGRect(x: rightX, y: coinStartY + (rowHeight + rowSpacing) * 2, width: columnWidth, height: rowHeight)
         scrollView.addSubview(coinLabel)
         scrollView.addSubview(coinLabelDigitSmooth)
         scrollView.addSubview(coinLabelDigitDrop)
+        scrollView.addSubview(coinLabelDigitCentered)
         let buttonY = coinStartY + (rowHeight + rowSpacing) * 3 + 8
         let buttonWidth = floor((view.bounds.width - leftX * 2 - columnSpacing * 2) / 3)
         randomButton.frame = CGRect(x: leftX, y: buttonY, width: buttonWidth, height: rowHeight)
@@ -183,6 +200,7 @@ final class SwiftDemoViewController: UIViewController {
         coinLabel.zhh_animateValue(CGFloat(coinTotal), toValue: CGFloat(coinTotal), duration: 0)
         coinLabelDigitSmooth.zhh_animateValue(CGFloat(coinTotalDigitSmooth), toValue: CGFloat(coinTotalDigitSmooth), duration: 0)
         coinLabelDigitDrop.zhh_animateValue(CGFloat(coinTotalDigitDrop), toValue: CGFloat(coinTotalDigitDrop), duration: 0)
+        coinLabelDigitCentered.zhh_animateValue(CGFloat(coinTotalDigitCentered), toValue: CGFloat(coinTotalDigitCentered), duration: 0)
         
         addEngineCompareSamples(startY: buttonY + rowHeight + 28)
         addAnimationStyleSamples(startY: buttonY + rowHeight + 170)
@@ -222,6 +240,11 @@ final class SwiftDemoViewController: UIViewController {
         let fromValueDigitDrop = coinTotalDigitDrop
         coinTotalDigitDrop += addValueDigitDrop
         coinLabelDigitDrop.zhh_animateValue(CGFloat(fromValueDigitDrop), toValue: CGFloat(coinTotalDigitDrop), duration: 0.55)
+        
+        let addValueCentered = Int.random(in: 3...28)
+        let fromValueCentered = coinTotalDigitCentered
+        coinTotalDigitCentered += addValueCentered
+        coinLabelDigitCentered.zhh_animateValue(CGFloat(fromValueCentered), toValue: CGFloat(coinTotalDigitCentered), duration: 0.55)
     }
     
     @objc private func handleRandomIncrement() {
@@ -238,9 +261,11 @@ final class SwiftDemoViewController: UIViewController {
         coinTotal = 0
         coinTotalDigitSmooth = 0
         coinTotalDigitDrop = 0
+        coinTotalDigitCentered = 0
         coinLabel.zhh_animateValue(coinLabel.zhh_currentValue(), toValue: 0, duration: 0.35)
         coinLabelDigitSmooth.zhh_animateValue(coinLabelDigitSmooth.zhh_currentValue(), toValue: 0, duration: 0.35)
         coinLabelDigitDrop.zhh_animateValue(coinLabelDigitDrop.zhh_currentValue(), toValue: 0, duration: 0.35)
+        coinLabelDigitCentered.zhh_animateValue(coinLabelDigitCentered.zhh_currentValue(), toValue: 0, duration: 0.35)
     }
     
     private func addEngineCompareSamples(startY: CGFloat) {
