@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZHHAnimatedNumberLabel'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = '一个优雅流畅地展示数字变化动画的 UILabel 子类。'
 
   s.description      = <<-DESC

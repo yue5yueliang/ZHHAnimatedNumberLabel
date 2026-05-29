@@ -337,9 +337,15 @@ extension ZHHAnimatedNumberLabel {
         }
     }
 
+    /// 数字位宽度的最小下限，随字号缩放，避免小字号被固定 10pt 强行撑宽。
+    var minDigitLayoutWidth: CGFloat {
+        max(2, font.pointSize * 0.55)
+    }
+
     /// 为字符序列生成逐位布局信息。
     func buildCharacterLayouts(for chars: [Character]) -> (frames: [CGRect], totalWidth: CGFloat, defaultWidth: CGFloat) {
-        let defaultWidth = max(("0" as NSString).size(withAttributes: [.font: font as Any]).width, 10)
+        let minWidth = minDigitLayoutWidth
+        let defaultWidth = max(("0" as NSString).size(withAttributes: [.font: font as Any]).width, minWidth)
         let rawMaxDigitWidth = cachedMaxDigitWidth
         // digitWidthScale 控制等宽缩放：1.0 = 最宽数字宽度，0.0 = 各字符实际宽度
         let effectiveScale = max(0, min(zhh_digitWidthScale, 2.0))
@@ -388,7 +394,7 @@ extension ZHHAnimatedNumberLabel {
             let w = (String(ch) as NSString).size(withAttributes: [.font: font as Any]).width
             width = max(width, w)
         }
-        return max(width, 10)
+        return max(width, minDigitLayoutWidth)
     }
 
     // MARK: - 动画控制
